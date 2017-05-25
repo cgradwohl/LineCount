@@ -1,0 +1,17 @@
+{
+  "name": "linecount",
+  "version": "1.0.0",
+  "description": "command line app that shows line count of source files,",
+  "main": "line-count.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm.",
+    "command",
+    "line",
+    "node"
+  ],
+  "author": "Chris Gradwohl",
+  "license": "ISC"
+}

@@ -69,10 +69,8 @@ Child directories are indented under their parent directory.
 
 6. Each directory shows a sum of its subdirectories and files.
 
-Please note the purpose of this coding challenge is to see if an applicant
-is capable of writing the production quality code, not just to verify if
-the code is working. So please pay special attention to the code quality.
+7. write production quality code, not just working code.
 
-Please zip your final program, rename it to zipped.pdf to work around a content
+8. zip your final program, rename it to zipped.pdf to work around a content
 filtering, and send it to me via email attachment for review. This is not timed,
 but your prompt answer would be appreciated.

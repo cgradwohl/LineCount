@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 module.exports = {
 
   /**
@@ -9,10 +11,20 @@ module.exports = {
   */
   directories: (root) => {
 
+    return new Promise( (resolve, reject) => {
+      fs.readdir(root, (err, files) => {
+        if(files) resolve(files);
+
+        else reject();
+      });
+    });
 
 
 
-    return sub_directories;
+
+
+    // return sub_directories;
+    // return sub_directories;
   },
 
 
@@ -42,11 +54,9 @@ module.exports = {
   * @param {Array} directories - an array of directories
   */
   files: (directories) => {
-
-
-
-
-    return path_obj;
+    console.log(directories);
+    
+    // return path_obj;
   },
 
   /**

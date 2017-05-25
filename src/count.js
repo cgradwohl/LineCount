@@ -10,11 +10,12 @@ module.exports = {
   * @param {String} root - path to the root directory
   */
   directories: (root) => {
-
     return new Promise( (resolve, reject) => {
       fs.readdir(root, (err, files) => {
-        if(files) resolve(files);
 
+        //@TODO recursively go into each directory, adding the path to the results array
+
+        if(files) resolve(files);
         else reject();
       });
     });
@@ -23,7 +24,7 @@ module.exports = {
 
 
 
-    // return sub_directories;
+
     // return sub_directories;
   },
 
@@ -55,7 +56,7 @@ module.exports = {
   */
   files: (directories) => {
     console.log(directories);
-    
+
     // return path_obj;
   },
 

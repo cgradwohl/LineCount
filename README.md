@@ -74,3 +74,36 @@ Child directories are indented under their parent directory.
 8. zip your final program, rename it to zipped.pdf to work around a content
 filtering, and send it to me via email attachment for review. This is not timed,
 but your prompt answer would be appreciated.
+
+```
+> files
+[ [ 'file1.js', 'file2.js' ],
+  [ 'file1.js', 'file2.js', 'file3.js' ],
+  [ 'file1.js' ] ]
+> dirs
+[ 'path1', 'path2', 'path3' ]
+> map
+Map {}
+> for( let i=0; i<dirs.length; i++){
+... map.set(dirs[i], files[i]);
+... }
+Map {
+  'path1' => [ 'file1.js', 'file2.js' ],
+  'path2' => [ 'file1.js', 'file2.js', 'file3.js' ],
+  'path3' => [ 'file1.js' ] }
+> map
+Map {
+  'path1' => [ 'file1.js', 'file2.js' ],
+  'path2' => [ 'file1.js', 'file2.js', 'file3.js' ],
+  'path3' => [ 'file1.js' ] }
+> map[1]
+undefined
+> map.forEach( (value, key) => {
+... console.log(key, '=', value);
+... }
+... )
+path1 = [ 'file1.js', 'file2.js' ]
+path2 = [ 'file1.js', 'file2.js', 'file3.js' ]
+path3 = [ 'file1.js' ]
+undefined
+```

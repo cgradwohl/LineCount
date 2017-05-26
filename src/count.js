@@ -1,69 +1,40 @@
 const fs = require('fs');
+const path = require('path');
 
 module.exports = {
 
   /**
-  * count.directories()
-  * counts the sub_directories of a root directory
-  * returns an array of sub_directories
+  * Counts the sub_directories of a root directory
   *
   * @param {String} root - path to the root directory
   */
-  directories: (root) => {
+  sub_directories: (dir) => {
     return new Promise( (resolve, reject) => {
-      fs.readdir(root, (err, files) => {
-
-        //@TODO recursively go into each directory, adding the path to the results array
-
+      fs.readdir(dir, (err, files) => {
         if(files) resolve(files);
-        else reject();
+        else reject(Error('sub_directories Broke!'));
       });
-    });
-
-
-
-
-
+    })
 
     // return sub_directories;
   },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   /**
-  * count.files()
   * counts the files in a directory
   * returns an object with directory paths as keys, array of files as values.
   *
   * @param {Array} directories - an array of directories
   */
   files: (directories) => {
-    console.log(directories);
+    return new Promise( (resolve, reject) => {
+      if (directories) resolve(directories);
+      else reject(Error('file Broke!'))
+    });
 
-    // return path_obj;
   },
 
   /**
-  * count.lines()
   * counts the lines in a file
-  * returns an object
   *
   * @param {Map} map - map object with directory paths as keys, array of files as values.
   */

@@ -6,8 +6,8 @@
 */
 
 
-const Directory = require('./directory');
-const File      = require('./file');
+const Directory = require('./types/directory');
+const File      = require('./types/file');
 const Promise   = require('bluebird');
 const fs        = Promise.promisifyAll(require('fs'));
 

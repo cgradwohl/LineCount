@@ -11,12 +11,26 @@ const read  = require('./src/read');
 const count = require('./src/count');
 
 
-/*read.dir(root).then( (directory) => {
-  let files = directory.files;
-  console.log(files);
-});*/
+read.dir(root).then( (directory) => {
 
-count.lines('./src/file.js')
+  console.log(directory.name + '/','=',directory.length,'files');
+
+  let files = directory.files;
+
+  files.forEach( (file) => {
+    if( file.type==='Directory' ){// --src/ = 50 files, 5000 lines
+      console.log(file.name + '/','=',file.length,'files');
+      // console.log(file.path);
+    }
+    if( file.type==='File'){
+
+    }
+
+  });
+  // console.log(files);
+});
+
+/*count.lines('./src/file.js')
 .then( (value) => {
   console.log(value);
-})
+})*/

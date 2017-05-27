@@ -78,17 +78,16 @@ but your prompt answer would be appreciated.
 
 <!--  NOTES:
 
-      1. Currently we are using bluebird to turn every object on
-          the fs module into a promise.
+      1. Currently we are using bluebird to turn every object on the fs module
+      into a promise.
 
           - Instead we should just turn fs.stat() and fs.readdir() into promises
           without using bluebird!
 
-      2. This design should be documented and added to the repo as
+      2. The design should be documented and added to the repo as.
 
       3. Compose Promises to write better code.
 
-      4. Refactor and style code.
 
 -->
 

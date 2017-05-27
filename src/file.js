@@ -1,16 +1,18 @@
 /**
 * File object
-* @param {String} name
+*
+* @param {String} name 
+* @return {Object}
 */
-const File = function(name) {
-  this.name = name;
-  this.size = 0;
-  this.hidden = false;
-  if (name.substr(0, 1) === '.'){
-    // this.hidden = true;
-    return 0;
-  }
 
+
+const File = function(name) {
+
+  this.name   = name;
+  this.size   = 0;
+  this.hidden = false;
+  this.type = 'File';
+  if (name.substr(0, 1) === '.') this.hidden = true;
 
 
   return this;

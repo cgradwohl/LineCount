@@ -74,3 +74,34 @@ Child directories are indented under their parent directory.
 8. zip your final program, rename it to zipped.pdf to work around a content
 filtering, and send it to me via email attachment for review. This is not timed,
 but your prompt answer would be appreciated.
+
+
+<!--  NOTES:
+
+      1. Currently we are using bluebird to turn every object on
+          the fs module into a promise.
+
+          - Instead we should just turn fs.stat() and fs.readdir() into promises
+          without using bluebird!
+
+      2. This design should be documented and added to the repo as
+
+      3. Compose Promises to write better code.
+
+      4. Refactor and style code.
+
+-->
+
+
+<!--  STYLE GUIDE:
+
+      1. file header:
+
+      /**
+      * One line description
+      *
+      * @param {Type} name - description
+      * @return {Type}
+      */
+
+-->

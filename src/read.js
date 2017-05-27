@@ -1,13 +1,19 @@
-const Promise   = require('bluebird');
-const fs        = Promise.promisifyAll(require('fs'));
+/**
+* recursively visits the sub-directories of a root directory
+*
+* @param {String} root - directory to be explored
+* @return {Directory}
+*/
+
+
 const Directory = require('./directory');
 const File      = require('./file');
+const Promise   = require('bluebird');
+const fs        = Promise.promisifyAll(require('fs'));
 
 
-/**
-* @param {String} root - directory to be explored
-*/
 const read = (root) => {
+
   let directory = new Directory(root),
       file;
 
@@ -31,7 +37,8 @@ const read = (root) => {
     .map( (files) => {
       directory.length += 1;
       directory.files.push(files);
-    }).then(() => directory);
+    })
+    .then( () => directory);
 }
 
 module.exports.dir = read;

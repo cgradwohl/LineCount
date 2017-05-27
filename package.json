@@ -13,5 +13,8 @@
     "node"
   ],
   "author": "Chris Gradwohl",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0"
+  }
 }

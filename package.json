@@ -1,6 +1,6 @@
 {
   "name": "linecount",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "command line app that shows line count of source files,",
   "main": "line-count.js",
   "scripts": {

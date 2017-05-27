@@ -1,16 +1,19 @@
 const Promise   = require('bluebird');
 const fs        = Promise.promisifyAll(require('fs'));
 const Directory = require('./directory');
-const File = require('./file');
+const File      = require('./file');
 
-const readDir = (inputDir) => {
-  let directory = new Directory(inputDir),
+
+/**
+* @param {String} root - directory to be explored
+*/
+const read = (root) => {
+  let directory = new Directory(root),
       file;
 
-  return fs.readdirAsync(inputDir)
+  return fs.readdirAsync(root)
     .map( (fileName) => {
-
-      return fs.statAsync(inputDir + '/' + fileName)
+      return fs.statAsync(root + '/' + fileName)
       .then( (stat) => {
 
         if (stat.isFile()) {
@@ -20,7 +23,7 @@ const readDir = (inputDir) => {
         }
 
         if (stat.isDirectory()) {
-          return readDir(inputDir + '/' + fileName).then( (directory) => directory);
+          return read(root + '/' + fileName).then( (directory) => directory);
         }
       });
 
@@ -31,4 +34,4 @@ const readDir = (inputDir) => {
     }).then(() => directory);
 }
 
-module.exports.dir = readDir;
+module.exports.dir = read;

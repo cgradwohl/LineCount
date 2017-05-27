@@ -1,3 +1,7 @@
+/**
+* Directory object
+* @param {String} path
+*/
 const Directory = function(path) {
   let dirArray = path.split('/');
   let name     = dirArray[dirArray.length - 1];

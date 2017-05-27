@@ -1,4 +1,4 @@
-#### Please write a Node command line app that shows line count of source files, visiting sub-directories recursively.
+#### A Node command line app that shows line count of source files, visiting sub-directories recursively.
 
 
 `$ node line-count.js /my/test/project`

@@ -2,7 +2,7 @@
 * recursively visits the sub-directories of a root directory
 *
 * @param {String} root - directory to be explored
-* @return {Directory}
+* @return {Promise}
 */
 
 

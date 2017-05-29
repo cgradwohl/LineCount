@@ -7,32 +7,12 @@
 
 const root  = process.argv.slice(2)[0];
 const read  = require('./src/read');
-const count = require('./src/count');
+const print = require('./src/print');
 
 read.dir(root).then((directory) => {
 
-  // console.log(directory.name + '/', '=', directory.length, 'files');
+  print.root(directory);
 
-  let files = directory.files;
+  print.files(directory);
 
-  /*files.forEach((file) => {
-    if (file.type === 'Directory') {// --src/ = 50 files, 5000 lines
-      console.log(file.name + '/', '=', file.length, 'files');
-
-      // console.log(file.path);
-    }
-
-    if (file.type === 'File') {
-      console.log(file.name);
-    }
-
-  });
-*/
-
-  console.log(files[0].files);
 });
-
-/*count.lines('./src/types/file.js')
-.then((value) => {
-  console.log(value);
-});*/

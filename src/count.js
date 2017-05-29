@@ -27,7 +27,3 @@ const count = (filename) => {
 };
 
 module.exports.lines = count;
-
-/*count.then((val) => {
-  console.log(val);
-});*/

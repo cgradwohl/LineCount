@@ -29,7 +29,7 @@ read.dir(root).then((directory) => {
   // console.log(files);
 });
 
-/*count.lines('./src/file.js')
-.then( (value) => {
+count.lines('./src/types/file.js')
+.then((value) => {
   console.log(value);
-})*/
+});

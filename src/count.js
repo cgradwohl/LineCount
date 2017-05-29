@@ -9,7 +9,7 @@ const fs    = require('fs');
 
 const count = (filename) => {
 
-  new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
 
     fs.readFile(filename, (err, data) => {
 

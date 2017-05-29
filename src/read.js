@@ -17,7 +17,7 @@ const read = (root) => {
 
   return fs.readdirAsync(root)
     .map((fileName) => {
-      fs.statAsync(root + '/' + fileName)
+      return fs.statAsync(root + '/' + fileName)
       .then((stat) => {
 
         if (stat.isFile()) {
@@ -27,8 +27,13 @@ const read = (root) => {
         }
 
         if (stat.isDirectory()) {
-          return read(root + '/' + fileName).then((directory) => {
-            console.log('DIRECTORY', directory);
+          return read(root + '/' + fileName)
+          .then((directory) => {
+            directory.files.forEach((file) => {
+              if (file.type === 'File') directory.contents += 1;
+
+              if (file.type === 'Directory') directory.contents += 1 + file.length;
+            });
             return directory;
           });
         }

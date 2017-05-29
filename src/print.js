@@ -21,9 +21,16 @@ module.exports = {
   },
 
   files: (directory) => {
-    let files = directory.files;
+    let files     = directory.files;
+    let lineCount = 0;
 
     files.forEach((file) => {
+      if (file.type === 'File') {
+        count.lines(file).then(() => console.log(file.path, file.lines));
+      }
+
+      console.log('HEY PATSY!!', file.path, file.lines);
+
       if (file.type === 'Directory') {
         let slashCount = file.path.split('/').length - 2;
         let whiteSpace = '  '.repeat(slashCount);

@@ -7,8 +7,8 @@
 
 const Directory = function (path) {
 
-  let dirArray = path.split('/');
-  let name     = dirArray[dirArray.length - 1];
+  const pathArray = path.split('/');
+  const name      = pathArray[pathArray.length - 1];
 
   this.name     = name;
   this.path     = path;

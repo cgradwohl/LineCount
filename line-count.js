@@ -8,6 +8,7 @@
 const root  = process.argv.slice(2)[0];
 const read  = require('./src/read');
 const print = require('./src/print');
+const count = require('./src/count');
 
 read.dir(root).then((directory) => {
 

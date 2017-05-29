@@ -5,6 +5,7 @@
 * @return {Promise}
 */
 
+const count     = require('./count');
 const Directory = require('./types/directory');
 const File      = require('./types/file');
 const Promise   = require('bluebird');
@@ -21,8 +22,11 @@ const read = (root) => {
       .then((stat) => {
 
         if (stat.isFile()) {
-          file = new File(fileName);
+          file = new File(root + '/' + fileName);
           file.size = stat.size;
+
+          // @TODO count lines
+
           return file;
         }
 
@@ -44,6 +48,7 @@ const read = (root) => {
       directory.files.push(files);
     })
     .then(() => directory);
+
 };
 
 module.exports.dir = read;

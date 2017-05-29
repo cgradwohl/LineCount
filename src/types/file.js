@@ -1,12 +1,11 @@
 /**
 * File object
 *
-* @param {String} name 
+* @param {String} name
 * @return {Object}
 */
 
-
-const File = function(name) {
+const File = function (name) {
 
   this.name   = name;
   this.size   = 0;
@@ -14,8 +13,7 @@ const File = function(name) {
   this.type = 'File';
   if (name.substr(0, 1) === '.') this.hidden = true;
 
-
   return this;
-}
+};
 
 module.exports = File;

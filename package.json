@@ -16,5 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.4"
   }
 }

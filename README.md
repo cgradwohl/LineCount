@@ -54,24 +54,24 @@
 
 #### Notes:
 
-1. Use asynchronous fs methods.
+1. write production quality code, not just working code.
 
-2. Use Promises.
+2. Use asynchronous fs methods.
 
-3. Support both Unix ("\n") and Windows ("\r\n") end of lines,
+3. Use Promises.
+
+4. Support both Unix ("\n") and Windows ("\r\n") end of lines,
 advanced features like ignoring comments are not required.
 
-4. Make sure it works on directories with many items.
+5. Make sure it works on directories with many items.
 
-5. Please note the output shows the directory hierarchy as a tree-like structure.
+6. @TODO Please note the output shows the directory hierarchy as a tree-like structure.
 Child directories are indented under their parent directory.
 (Spaces are replaced with hyphens for depiction. Use spaces in your app).
 
-6. Each directory shows a sum of its subdirectories and files.
+7. @TODO Each directory shows a sum of its subdirectories and files.
 
-7. write production quality code, not just working code.
-
-8. zip your final program, rename it to zipped.pdf to work around a content
+8. @TODO zip your final program, rename it to zipped.pdf to work around a content
 filtering, and send it to me via email attachment for review. This is not timed,
 but your prompt answer would be appreciated.
 

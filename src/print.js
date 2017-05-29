@@ -4,6 +4,3 @@
 * @param {} name - description
 * @return {}
 */
-
-
-module.exports = {};

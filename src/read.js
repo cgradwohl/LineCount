@@ -5,22 +5,20 @@
 * @return {Promise}
 */
 
-
 const Directory = require('./types/directory');
 const File      = require('./types/file');
 const Promise   = require('bluebird');
 const fs        = Promise.promisifyAll(require('fs'));
 
-
 const read = (root) => {
 
-  let directory = new Directory(root),
-      file;
+  let directory = new Directory(root);
+  let file;
 
   return fs.readdirAsync(root)
-    .map( (fileName) => {
-      return fs.statAsync(root + '/' + fileName)
-      .then( (stat) => {
+    .map((fileName) => {
+      fs.statAsync(root + '/' + fileName)
+      .then((stat) => {
 
         if (stat.isFile()) {
           file = new File(fileName);
@@ -29,16 +27,18 @@ const read = (root) => {
         }
 
         if (stat.isDirectory()) {
-          return read(root + '/' + fileName).then( (directory) => directory);
+          return read(root + '/' + fileName).then((directory) => {
+            console.log('DIRECTORY', directory);
+            return directory;
+          });
         }
       });
-
     })
-    .map( (files) => {
+    .map((files) => {
       directory.length += 1;
       directory.files.push(files);
     })
-    .then( () => directory);
-}
+    .then(() => directory);
+};
 
 module.exports.dir = read;
